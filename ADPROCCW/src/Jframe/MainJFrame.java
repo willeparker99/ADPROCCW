@@ -336,18 +336,22 @@ public class MainJFrame extends javax.swing.JFrame {
             case "Grade 1":
                 ColourCombo.removeAllItems();
                 ColourCombo.addItem("No Colour");
+                ReinforcedCheck.setSelected(false);
                 ReinforcedCheck.setEnabled(false);
+                ReinforcedCornerCheck.setSelected(false);
                 ReinforcedCornerCheck.setEnabled(false);
                 break;
             case "Grade 2":
                 ColourCombo.removeAllItems();
+                ColourCombo.addItem("No Colour");
                 ColourCombo.addItem("1 Colour");
                 ColourCombo.addItem("2 Colours");
-                ReinforcedCheck.setEnabled(true);
+                ReinforcedCheck.setEnabled(false);
                 ReinforcedCornerCheck.setEnabled(false);
                 break;
             case "Grade 3":
                 ColourCombo.removeAllItems();
+                ColourCombo.addItem("No Colour");
                 ColourCombo.addItem("1 Colour");
                 ColourCombo.addItem("2 Colours");
                 ReinforcedCheck.setEnabled(true);
@@ -383,28 +387,32 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void ColourComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColourComboActionPerformed
         // TODO add your handling code here:
-        WarningText.setText("");
-        if("1 Colour".equals((String)ColourCombo.getSelectedItem()) && ReinforcedCheck.isSelected() == true){
-            WarningField.setForeground(Color.red);
-            WarningField.setText("Warning - Must have 2 colours if reinforced bottom is active. Please select 2 colours.");
+        String selectedGrade = (String)GradeCombo.getSelectedItem();
+        String selectedColour = (String)ColourCombo.getSelectedItem();
+        ReinforcedCornerCheck.setEnabled(true);
+        ReinforcedCheck.setEnabled(true);
+        if("Grade 1".equals(selectedGrade)){
+            ReinforcedCornerCheck.setEnabled(false);
+            ReinforcedCornerCheck.setSelected(false);
+            ReinforcedCheck.setEnabled(false);
+            ReinforcedCheck.setSelected(false);
+        } else if(("Grade 2".equals(selectedGrade) || "Grade 3".equals(selectedGrade)) && ("No Colour".equals(selectedColour) || "1 Colour".equals(selectedColour))){
+            ReinforcedCornerCheck.setEnabled(false);
+            ReinforcedCornerCheck.setSelected(false);
+            ReinforcedCheck.setEnabled(false);
+            ReinforcedCheck.setSelected(false);
         }
+        
     }//GEN-LAST:event_ColourComboActionPerformed
 
     private void ReinforcedCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReinforcedCheckActionPerformed
         // TODO add your handling code here:
-        WarningText.setText("");
-        if("1 Colour".equals((String)ColourCombo.getSelectedItem()) && ReinforcedCheck.isSelected() == true){
-            WarningField.setForeground(Color.red);
-            WarningField.setText("Warning - Must have 2 colours if reinforced bottom is active. Please select 2 colours.");
-        }
-        if("Grade 5".equals((String)GradeCombo.getSelectedItem()) && (ReinforcedCheck.isSelected() == false || false == ReinforcedCornerCheck.isSelected())){
-            WarningField.setForeground(Color.red);
-            WarningField.setText("Warning - Grade 5 Cardboard must have both a Reinforced Bottom and Reinforced Corners Please make these changes before continuing.");
-        }
+        
     }//GEN-LAST:event_ReinforcedCheckActionPerformed
 
     private void ReinforcedCornerCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReinforcedCornerCheckActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_ReinforcedCornerCheckActionPerformed
 
     private void LengthTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_LengthTextFocusGained
