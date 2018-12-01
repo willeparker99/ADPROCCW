@@ -402,7 +402,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void ReinforcedCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReinforcedCheckActionPerformed
         // TODO add your handling code here:
-        if(ReinforcedCheck.isSelected()){
+        if(ReinforcedCheck.isSelected() && !"Grade 2".equals((String)GradeCombo.getSelectedItem())){
             ReinforcedCornerCheck.setEnabled(true);
         } else {
             ReinforcedCornerCheck.setSelected(false);
@@ -490,10 +490,23 @@ public class MainJFrame extends javax.swing.JFrame {
                 ReceiptText += calc.getBoxByIndex(i).getInfo() + "\n";
             }
             Receipt.setText(ReceiptText);
+            BillText.setText("£" + Calculations.TotalPrice());
         } else {
             WarningText.setForeground(Color.red);
             WarningText.setText("Warning - Lenghth, Width, Height must have values.");
         }
+        LengthText.setText("Length");
+        WidthText.setText("Width");
+        HeightText.setText("Height");
+        GradeCombo.setSelectedIndex(0);
+        ColourCombo.removeAllItems();
+        ColourCombo.addItem("No Colour");
+        ReinforcedCheck.setEnabled(false);
+        ReinforcedCheck.setSelected(false);
+        ReinforcedCornerCheck.setEnabled(false);
+        ReinforcedCornerCheck.setSelected(false);
+        SealableCheck.setSelected(false);
+        QuantitySpinner.setValue(1);
     }//GEN-LAST:event_CalculateActionPerformed
     /**
      * @param args the command line arguments

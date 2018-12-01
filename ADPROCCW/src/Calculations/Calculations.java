@@ -10,6 +10,7 @@ package Calculations;
  * @author tama3
  */
 import CardboardBox.*;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 public final class Calculations {
     
@@ -115,39 +116,38 @@ public final class Calculations {
     }
     private void genBoxLi(){
         for(int i = 0; i < noInOrder; i++){
-
+            Box box;
             switch (type) {
                 case 1:
-                    Box box1 = new Box1(Length, Width, Height, cardboardGrade, sealableTop);
-                    boxesCreated.add(box1);
+                    box = new Box1(Length, Width, Height, cardboardGrade, sealableTop);
                     break;
                 case 2:
-                    Box box2 = new Box2(Length, Width, Height, cardboardGrade, sealableTop);
-                    boxesCreated.add((Box)box2);
+                    box = new Box2(Length, Width, Height, cardboardGrade, sealableTop);
                     break;
                 case 3:
-                    Box box3 = new Box3(Length, Width, Height, cardboardGrade, sealableTop);
-                    boxesCreated.add((Box)box3);
+                    box = new Box3(Length, Width, Height, cardboardGrade, sealableTop);
                     break;
                 case 4:
-                   Box box4 = new Box4(Length, Width, Height, cardboardGrade, sealableTop);
-                    boxesCreated.add((Box)box4);
+                    box = new Box4(Length, Width, Height, cardboardGrade, sealableTop);
                     break;
                 case 5:
-                    Box box5 = new Box5(Length, Width, Height, cardboardGrade, sealableTop);
-                    boxesCreated.add((Box)box5);
+                    box = new Box5(Length, Width, Height, cardboardGrade, sealableTop);
                     break;
                 default:
                     System.out.println("Error");
-                    Box boxDefault = new Box5(0, 0, 0, "Error", false);
-                    boxesCreated.add(boxDefault);
+                    box = new Box1(0, 0, 0, "Error", false);
                     break;
             }
+            boxesCreated.add((Box)box);
+            costTotal += box.getPrice();
         }
             
     }
     
     public static double TotalPrice(){
+        DecimalFormat df = new DecimalFormat("0.00");
+        String priceTotalString = df.format(costTotal);
+        costTotal = Double.parseDouble(priceTotalString);
         return costTotal;
     }
 

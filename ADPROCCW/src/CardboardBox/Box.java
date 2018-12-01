@@ -1,5 +1,7 @@
 package CardboardBox;
 
+import java.text.DecimalFormat;
+
 public abstract class Box {
     
     protected double boxLength, boxWidth, boxHeight, boxPrice, basePrice;
@@ -11,22 +13,27 @@ public abstract class Box {
     }
     
     public double getPrice(){
-        double price = basePrice * getBoxArea();
+        double pricebasic = basePrice * getBoxArea();
+        double priceTotal = pricebasic;
+        
         if(boxSealableTop){
-            price*=1.1;
+            priceTotal += pricebasic*1.1;
         }
         if("1 Colour".equals(boxColours)){
-            price*=1.12;
+            priceTotal += pricebasic*1.12;
         } else if ("2 Colours".equals(boxColours)){
-            price*=1.15;
+            priceTotal += pricebasic*1.15;
         }
         if(boxReinforcedBottom){
-            price*=1.13;
+            priceTotal += pricebasic*1.13;
         }
         if(boxReinforcedCorners){
-            price*=1.12;
+            priceTotal += pricebasic*1.12;
         }
-        return price;
+        DecimalFormat df = new DecimalFormat("0.00");
+        String priceTotalString = df.format(priceTotal);
+        priceTotal = Double.parseDouble(priceTotalString);
+        return priceTotal;
     }
     public String getInfo(){
             return "";
