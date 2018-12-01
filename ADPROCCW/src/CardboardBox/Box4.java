@@ -9,7 +9,7 @@ public class Box4 extends Box {
             super.boxGrade = grade;
             super.boxColours = "No Colour";
             super.boxSealableTop = sealableTop;
-            super.boxReinforcedBottom = false;
+            super.boxReinforcedBottom = true;
             super.boxReinforcedCorners = false;
             super.basePrice = 0.98;
     }

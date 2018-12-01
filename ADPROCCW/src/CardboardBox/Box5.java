@@ -9,8 +9,8 @@ public class Box5 extends Box {
             super.boxGrade = grade;
             super.boxColours = "No Colour";
             super.boxSealableTop = sealableTop;
-            super.boxReinforcedBottom = false;
-            super.boxReinforcedCorners = false;
+            super.boxReinforcedBottom = true;
+            super.boxReinforcedCorners = true;
             super.basePrice = 1.5;
     }
     @Override
