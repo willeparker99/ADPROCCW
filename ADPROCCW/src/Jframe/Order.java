@@ -1,5 +1,7 @@
 package adproccw;
 
+import CardboardBox.Box;
+
 public class Order {
     
     private Box orderBox;

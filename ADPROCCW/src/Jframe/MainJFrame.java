@@ -5,6 +5,8 @@
  */
 package Jframe;
 
+import Calculations.Calculations;
+import CardboardBox.*;
 import java.awt.Color;
 import java.util.regex.Pattern;
 
@@ -18,6 +20,7 @@ public class MainJFrame extends javax.swing.JFrame {
      * Creates new form MainJFrame
      */
     public MainJFrame() {
+        
         initComponents();
     }
 
@@ -30,6 +33,8 @@ public class MainJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        ReceiptPane = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         OrderButton = new javax.swing.JButton();
         LengthText = new javax.swing.JTextField();
         HeightText = new javax.swing.JTextField();
@@ -46,12 +51,17 @@ public class MainJFrame extends javax.swing.JFrame {
         ExitButton = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        ReceiptPane = new javax.swing.JScrollPane();
         jScrollPane2 = new javax.swing.JScrollPane();
         BillText = new javax.swing.JTextPane();
         WarningText = new javax.swing.JLabel();
         Calculate = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Receipt = new javax.swing.JTextArea();
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        ReceiptPane.setViewportView(jTextArea1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -168,9 +178,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jLabel5.setText("Select number of colours you would like printed");
 
-        ReceiptPane.setToolTipText("Current receipt");
-        ReceiptPane.setName("Receipt"); // NOI18N
-
+        BillText.setEditable(false);
         jScrollPane2.setViewportView(BillText);
 
         Calculate.setText("Add to Order");
@@ -181,6 +189,11 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         jLabel6.setText("Checkout Price");
+
+        Receipt.setEditable(false);
+        Receipt.setColumns(20);
+        Receipt.setRows(5);
+        jScrollPane1.setViewportView(Receipt);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -236,11 +249,12 @@ public class MainJFrame extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(Calculate)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(66, 66, 66)
                                         .addComponent(jLabel6)
-                                        .addGap(18, 18, 18)
+                                        .addGap(38, 38, 38)
                                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(ReceiptPane, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(jScrollPane1))
+                                .addGap(16, 16, 16))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(284, 284, 284)
                         .addComponent(jLabel2)))
@@ -255,9 +269,9 @@ public class MainJFrame extends javax.swing.JFrame {
                         .addComponent(WarningText)
                         .addGap(128, 128, 128))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
                                 .addComponent(jLabel2)
                                 .addGap(71, 71, 71)
                                 .addComponent(jLabel3)
@@ -288,12 +302,9 @@ public class MainJFrame extends javax.swing.JFrame {
                                                 .addComponent(SealableCheck))
                                             .addGroup(layout.createSequentialGroup()
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(QuantitySpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                .addGap(0, 9, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(133, 133, 133)
-                                .addComponent(ReceiptPane)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(QuantitySpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(16, 16, 16)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -338,21 +349,21 @@ public class MainJFrame extends javax.swing.JFrame {
                 ColourCombo.addItem("No Colour");
                 ColourCombo.addItem("1 Colour");
                 ColourCombo.addItem("2 Colours");
-                ReinforcedCheck.setEnabled(true);
-                ReinforcedCornerCheck.setEnabled(true);
+                ReinforcedCheck.setEnabled(false);
+                ReinforcedCornerCheck.setEnabled(false);
                 break;
             case "Grade 4":
                 ColourCombo.removeAllItems();
                 ColourCombo.addItem("1 Colour");
                 ColourCombo.addItem("2 Colours");
-                ReinforcedCheck.setEnabled(true);
-                ReinforcedCornerCheck.setEnabled(true);
+                ReinforcedCheck.setEnabled(false);
+                ReinforcedCornerCheck.setEnabled(false);
                 break;
             case "Grade 5":
                 ColourCombo.removeAllItems();
                 ColourCombo.addItem("2 Colours");
                 ReinforcedCheck.setEnabled(true);
-                ReinforcedCornerCheck.setEnabled(true);
+                ReinforcedCornerCheck.setEnabled(false);
                 break;
         }
     }//GEN-LAST:event_GradeComboActionPerformed
@@ -375,13 +386,18 @@ public class MainJFrame extends javax.swing.JFrame {
         String selectedColour = (String)ColourCombo.getSelectedItem();
         ReinforcedCornerCheck.setEnabled(true);
         ReinforcedCheck.setEnabled(true);
-        if("Grade 1".equals(selectedGrade)){
+        if("No Colour".equals(selectedGrade)){
             ReinforcedCornerCheck.setEnabled(false);
             ReinforcedCornerCheck.setSelected(false);
             ReinforcedCheck.setEnabled(false);
             ReinforcedCheck.setSelected(false);
-        } else if(("Grade 2".equals(selectedGrade) || "Grade 3".equals(selectedGrade)) && ("No Colour".equals(selectedColour) || "1 Colour".equals(selectedColour))){
+        } else if(("1 Colour".equals(selectedColour))){
             ReinforcedCornerCheck.setEnabled(false);
+            ReinforcedCornerCheck.setSelected(false);
+            ReinforcedCheck.setEnabled(false);
+            ReinforcedCheck.setSelected(false);
+        } else if("2 Colours".equals(selectedColour)){
+            ReinforcedCornerCheck.setEnabled(true);
             ReinforcedCornerCheck.setSelected(false);
             ReinforcedCheck.setEnabled(false);
             ReinforcedCheck.setSelected(false);
@@ -391,7 +407,12 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void ReinforcedCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReinforcedCheckActionPerformed
         // TODO add your handling code here:
-        
+        if(ReinforcedCheck.isSelected()){
+            ReinforcedCornerCheck.setEnabled(true);
+        } else {
+            ReinforcedCornerCheck.setSelected(false);
+            ReinforcedCornerCheck.setEnabled(false);
+        }
     }//GEN-LAST:event_ReinforcedCheckActionPerformed
 
     private void ReinforcedCornerCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReinforcedCornerCheckActionPerformed
@@ -468,7 +489,12 @@ public class MainJFrame extends javax.swing.JFrame {
         WarningText.setText("");
         if(WidthText.getText().matches("[0-9]+") && LengthText.getText().matches("[0-9]+") && HeightText.getText().matches("[0-9]+")){
             double area = Double.parseDouble(LengthText.getText()) * Double.parseDouble(WidthText.getText()) * Double.parseDouble(HeightText.getText());
-            Calculations.Calculations calc = new Calculations.Calculations(area, SealableCheck.isSelected(), ReinforcedCheck.isSelected(), ReinforcedCornerCheck.isSelected(), (String)GradeCombo.getSelectedItem(), (String)ColourCombo.getSelectedItem(), (int)QuantitySpinner.getValue());
+            Calculations calc = new Calculations(Double.parseDouble(LengthText.getText()), Double.parseDouble(WidthText.getText()), Double.parseDouble(HeightText.getText()), SealableCheck.isSelected(), ReinforcedCheck.isSelected(), ReinforcedCornerCheck.isSelected(), (String)GradeCombo.getSelectedItem(), (String)ColourCombo.getSelectedItem(), (int)QuantitySpinner.getValue());
+            String ReceiptText = "";
+            for(int i = 0; i < calc.getBoxLi().size(); i++){
+                ReceiptText += calc.getBoxByIndex(i).getInfo() + "\n";
+            }
+            Receipt.setText(ReceiptText);
         } else {
             WarningText.setForeground(Color.red);
             WarningText.setText("Warning - Lenghth, Width, Height must have values.");
@@ -521,6 +547,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField LengthText;
     private javax.swing.JButton OrderButton;
     private javax.swing.JSpinner QuantitySpinner;
+    private javax.swing.JTextArea Receipt;
     private javax.swing.JScrollPane ReceiptPane;
     private javax.swing.JCheckBox ReinforcedCheck;
     private javax.swing.JCheckBox ReinforcedCornerCheck;
@@ -533,7 +560,10 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
     //Open variable Declaration
+   
 }
