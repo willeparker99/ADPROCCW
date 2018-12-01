@@ -386,20 +386,15 @@ public class MainJFrame extends javax.swing.JFrame {
         String selectedColour = (String)ColourCombo.getSelectedItem();
         ReinforcedCornerCheck.setEnabled(true);
         ReinforcedCheck.setEnabled(true);
-        if("No Colour".equals(selectedGrade)){
-            ReinforcedCornerCheck.setEnabled(false);
-            ReinforcedCornerCheck.setSelected(false);
-            ReinforcedCheck.setEnabled(false);
-            ReinforcedCheck.setSelected(false);
-        } else if(("1 Colour".equals(selectedColour))){
+        if("No Colour".equals(selectedColour) || "1 Colour".equals(selectedColour)){
             ReinforcedCornerCheck.setEnabled(false);
             ReinforcedCornerCheck.setSelected(false);
             ReinforcedCheck.setEnabled(false);
             ReinforcedCheck.setSelected(false);
         } else if("2 Colours".equals(selectedColour)){
-            ReinforcedCornerCheck.setEnabled(true);
+            ReinforcedCornerCheck.setEnabled(false);
             ReinforcedCornerCheck.setSelected(false);
-            ReinforcedCheck.setEnabled(false);
+            ReinforcedCheck.setEnabled(true);
             ReinforcedCheck.setSelected(false);
         }
         
