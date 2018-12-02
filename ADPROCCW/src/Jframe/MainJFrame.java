@@ -20,7 +20,7 @@ public class MainJFrame extends javax.swing.JFrame {
      * Creates new form MainJFrame
      */
     public MainJFrame() {
-        
+
         initComponents();
     }
 
@@ -395,7 +395,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void ColourComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColourComboActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_ColourComboActionPerformed
 
     private void ReinforcedCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReinforcedCheckActionPerformed
@@ -404,12 +404,12 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void ReinforcedCornerCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReinforcedCornerCheckActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_ReinforcedCornerCheckActionPerformed
 
     private void LengthTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_LengthTextFocusGained
         // TODO add your handling code here:
-        if("Length".equals(LengthText.getText()) || "Not A Number".equals(LengthText.getText())){
+        if ("Length".equals(LengthText.getText()) || "Not A Number".equals(LengthText.getText())) {
             LengthText.setBackground(Color.white);
             LengthText.setText("");
         }
@@ -417,9 +417,9 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void LengthTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_LengthTextFocusLost
         // TODO add your handling code here:
-        if("".equals(LengthText.getText())){
+        if ("".equals(LengthText.getText())) {
             LengthText.setText("Length");
-        } else if(!LengthText.getText().matches("[0-9]+")){
+        } else if (!LengthText.getText().matches("[0-9]+")) {
             LengthText.setBackground(Color.red);
             LengthText.setText("Not A Number");
         }
@@ -427,7 +427,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void WidthTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_WidthTextFocusGained
         // TODO add your handling code here:
-        if("Width".equals(WidthText.getText()) || "Not A Number".equals(WidthText.getText())){
+        if ("Width".equals(WidthText.getText()) || "Not A Number".equals(WidthText.getText())) {
             WidthText.setBackground(Color.white);
             WidthText.setText("");
         }
@@ -435,9 +435,9 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void WidthTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_WidthTextFocusLost
         // TODO add your handling code here:
-        if("".equals(WidthText.getText())){
+        if ("".equals(WidthText.getText())) {
             WidthText.setText("Width");
-        } else if(!WidthText.getText().matches("[0-9]+")){
+        } else if (!WidthText.getText().matches("[0-9]+")) {
             WidthText.setBackground(Color.red);
             WidthText.setText("Not A Number");
         }
@@ -445,7 +445,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void HeightTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_HeightTextFocusGained
         // TODO add your handling code here:
-        if("Height".equals(HeightText.getText()) || "Not A Number".equals(HeightText.getText())){
+        if ("Height".equals(HeightText.getText()) || "Not A Number".equals(HeightText.getText())) {
             HeightText.setBackground(Color.white);
             HeightText.setText("");
         }
@@ -453,9 +453,9 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void HeightTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_HeightTextFocusLost
         // TODO add your handling code here:
-        if("".equals(HeightText.getText())){
+        if ("".equals(HeightText.getText())) {
             HeightText.setText("Height");
-        } else if(!HeightText.getText().matches("[0-9]+")){
+        } else if (!HeightText.getText().matches("[0-9]+")) {
             HeightText.setBackground(Color.red);
             HeightText.setText("Not A Number");
         }
@@ -463,7 +463,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void GradeComboPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_GradeComboPropertyChange
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_GradeComboPropertyChange
 
     private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
@@ -471,20 +471,41 @@ public class MainJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_ExitButtonActionPerformed
 
     private void CalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalculateActionPerformed
-        // TODO add your handling code here:
         WarningText.setText("");
-        if(WidthText.getText().matches("[0-9]+") && LengthText.getText().matches("[0-9]+") && HeightText.getText().matches("[0-9]+")){
+        String grade = (String) GradeCombo.getSelectedItem();
+        String colour = (String) ColourCombo.getSelectedItem();
+        Boolean bottom = ReinforcedCheck.isSelected();
+        Boolean corner = ReinforcedCornerCheck.isSelected();
+
+        if (grade.equals("1") && colour.equals("0") && bottom.equals(false) && corner.equals(false)){
+                        
+        } else if ((grade.equals("2") && (colour.equals("1") || colour.equals("2") || colour.equals("3")) && bottom.equals(false) && corner.equals(false)) || (grade.equals("2") && colour.equals("2") && bottom.equals(true) && corner.equals(false))) {            
+            
+        } else if (grade.equals("3") && (colour.equals("1") || colour.equals("2") || colour.equals("3"))) {
+            
+        } else if (grade.equals("4") && (colour.equals("1") || colour.equals("2"))) {
+            
+        } else if (grade.equals("5") && colour.equals("2")){
+            
+        } else{
+            this.dispose();
+            new ErrorMessage().setVisible(true);
+        }
+        
+
+        
+        if (WidthText.getText().matches("[0-9]+") && LengthText.getText().matches("[0-9]+") && HeightText.getText().matches("[0-9]+")) {
             double area = Double.parseDouble(LengthText.getText()) * Double.parseDouble(WidthText.getText()) * Double.parseDouble(HeightText.getText());
-            Calculations calc = new Calculations(Double.parseDouble(LengthText.getText()), Double.parseDouble(WidthText.getText()), Double.parseDouble(HeightText.getText()), SealableCheck.isSelected(), ReinforcedCheck.isSelected(), ReinforcedCornerCheck.isSelected(), (String)GradeCombo.getSelectedItem(), (String)ColourCombo.getSelectedItem(), (int)QuantitySpinner.getValue());
+            Calculations calc = new Calculations(Double.parseDouble(LengthText.getText()), Double.parseDouble(WidthText.getText()), Double.parseDouble(HeightText.getText()), SealableCheck.isSelected(), ReinforcedCheck.isSelected(), ReinforcedCornerCheck.isSelected(), (String) GradeCombo.getSelectedItem(), (String) ColourCombo.getSelectedItem(), (int) QuantitySpinner.getValue());
             String ReceiptText = "";
-            for(int i = 0; i < calc.getBoxLi().size(); i++){
+            for (int i = 0; i < calc.getBoxLi().size(); i++) {
                 ReceiptText += calc.getBoxByIndex(i).getInfo() + "\n";
             }
             Receipt.setText(ReceiptText);
             BillText.setText("£" + Calculations.TotalPrice());
         } else {
             WarningText.setForeground(Color.red);
-            WarningText.setText("Warning - Lenghth, Width, Height must have values.");
+            WarningText.setText("Warning - Length, Width, Height must have values.");
         }
         LengthText.setText("Length");
         WidthText.setText("Width");
@@ -498,6 +519,8 @@ public class MainJFrame extends javax.swing.JFrame {
         ReinforcedCornerCheck.setSelected(false);
         SealableCheck.setSelected(false);
         QuantitySpinner.setValue(1);
+
+
     }//GEN-LAST:event_CalculateActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -540,13 +563,13 @@ public class MainJFrame extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
+
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainJFrame().setVisible(true);
-                
+
             }
         });
     }
@@ -580,5 +603,5 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
     //Open variable Declaration
-   
+
 }
