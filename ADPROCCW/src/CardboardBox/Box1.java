@@ -1,4 +1,7 @@
 package CardboardBox;
+/**
+ * Box 1 requirements.
+ */
 
 public class Box1 extends Box {
     
