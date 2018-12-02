@@ -1,4 +1,7 @@
 package CardboardBox;
+/**
+ * Box 5 requirements.
+ */
 
 public class Box5 extends Box {
     
@@ -13,6 +16,9 @@ public class Box5 extends Box {
             super.boxReinforcedCorners = true;
             super.basePrice = 1.5;
     }
+    /**
+    *Returns information on Box 5.
+    */
     @Override
     public String getInfo(){
         return "Type 5 Box - Area: " + super.getBoxArea() + ", Cardboard Grade: " + boxGrade + ", Colours: " + boxColours + ", Sealable Top: " + boxSealableTop + ", Reinforced Bottom: " + boxReinforcedBottom + ", Reinforced Corners: " + boxReinforcedCorners + ". Total Price: £" + getPrice();
