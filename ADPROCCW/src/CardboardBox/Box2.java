@@ -1,5 +1,7 @@
 package CardboardBox;
-
+/**
+ * Box 2 requirements.
+ */
 public class Box2 extends Box {
     
     public Box2 (double Length, double Width, double Height, String grade, boolean sealableTop){
