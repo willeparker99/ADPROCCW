@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 
 /**
  *
- * @author tama3
+ * @author up861063
  */
 public class MainJFrame extends javax.swing.JFrame {
 
@@ -334,6 +334,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void OrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderButtonActionPerformed
         // To be added to:
+        this.dispose();
+        new CheckoutFrame().setVisible(true);
     }//GEN-LAST:event_OrderButtonActionPerformed
 
     private void GradeComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GradeComboActionPerformed
