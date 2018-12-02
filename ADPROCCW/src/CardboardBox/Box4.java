@@ -1,4 +1,7 @@
 package CardboardBox;
+/**
+ * Box 4 requirements.
+ */
 
 public class Box4 extends Box {
     
@@ -13,6 +16,9 @@ public class Box4 extends Box {
             super.boxReinforcedCorners = false;
             super.basePrice = 0.98;
     }
+    /**
+    *Returns information on Box 4.
+    */
     @Override
     public String getInfo(){
         return "Type 4 Box - Area: " + super.getBoxArea() + ", Cardboard Grade: " + boxGrade + ", Colours: " + boxColours + ", Sealable Top: " + boxSealableTop + ", Reinforced Bottom: " + boxReinforcedBottom + ", Reinforced Corners: " + boxReinforcedCorners + ". Total Price: £" + getPrice();
