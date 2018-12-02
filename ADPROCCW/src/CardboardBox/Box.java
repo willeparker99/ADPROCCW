@@ -4,16 +4,19 @@ import java.text.DecimalFormat;
 
 public abstract class Box {
     
-    protected double boxLength, boxWidth, boxHeight, boxPrice, basePrice;
+    protected double boxLength, boxWidth, boxHeight, basePrice;
     protected boolean boxReinforcedCorners, boxSealableTop, boxReinforcedBottom;
     protected String boxGrade, boxColours;
     
     public double getBoxArea(){
         return boxLength * boxHeight * boxWidth;
     }
+    public double getBoxSurfaceArea(){
+        return basePrice * ((boxLength * boxWidth * 4) + (boxLength * boxHeight * 2));
+    }
     
     public double getPrice(){
-        double pricebasic = basePrice * ((boxLength * boxWidth * 4) + (boxLength * boxHeight * 2));
+        double pricebasic = getBoxSurfaceArea();
         double priceTotal = pricebasic;
         
         if(boxSealableTop){
