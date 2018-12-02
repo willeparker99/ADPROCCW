@@ -25,9 +25,7 @@ public class Box5 extends Box {
             super.boxReinforcedCorners = true;
             super.basePrice = 1.5;
     }
-    /**
-    *Returns information on Box 5.
-    */
+    
     @Override
     /// @return Returns the info of each box
     public String getInfo(){
