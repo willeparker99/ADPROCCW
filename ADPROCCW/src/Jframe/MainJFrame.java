@@ -523,9 +523,18 @@ public class MainJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_CalculateActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        LengthText.setText("");
-        WidthText.setText("");
-        HeightText.setText("");
+        LengthText.setText("Length");
+        WidthText.setText("Width");
+        HeightText.setText("Height");
+        GradeCombo.setSelectedIndex(0);
+        ColourCombo.removeAllItems();
+        ColourCombo.addItem("No Colour");
+        ReinforcedCheck.setEnabled(false);
+        ReinforcedCheck.setSelected(false);
+        ReinforcedCornerCheck.setEnabled(false);
+        ReinforcedCornerCheck.setSelected(false);
+        SealableCheck.setSelected(false);
+        QuantitySpinner.setValue(1);
     }//GEN-LAST:event_jButton1ActionPerformed
     /**
      * @param args the command line arguments
