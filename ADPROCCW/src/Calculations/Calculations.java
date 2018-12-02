@@ -138,17 +138,16 @@ public final class Calculations {
                     box = new Box1(0, 0, 0, "Error", false);
                     break;
             }
-            boxesCreated.add((Box)box);
+            boxesCreated.add(box);
             costTotal += box.getPrice();
         }
             
     }
     
-    public static double TotalPrice(){
-        DecimalFormat df = new DecimalFormat("0.00");
+    public static String TotalPrice(){
+        DecimalFormat df = new DecimalFormat("#.00");
         String priceTotalString = df.format(costTotal);
-        costTotal = Double.parseDouble(priceTotalString);
-        return costTotal;
+        return priceTotalString;
     }
 
 }

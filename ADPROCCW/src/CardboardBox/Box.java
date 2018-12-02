@@ -30,7 +30,7 @@ public abstract class Box {
         if(boxReinforcedCorners){
             priceTotal += pricebasic*1.12;
         }
-        DecimalFormat df = new DecimalFormat("0.00");
+        DecimalFormat df = new DecimalFormat("#.##");
         String priceTotalString = df.format(priceTotal);
         priceTotal = Double.parseDouble(priceTotalString);
         return priceTotal;

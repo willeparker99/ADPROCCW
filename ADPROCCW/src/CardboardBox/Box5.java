@@ -7,7 +7,7 @@ public class Box5 extends Box {
             super.boxWidth = Width;
             super.boxHeight = Height;
             super.boxGrade = grade;
-            super.boxColours = "No Colour";
+            super.boxColours = "2 Colours";
             super.boxSealableTop = sealableTop;
             super.boxReinforcedBottom = true;
             super.boxReinforcedCorners = true;
