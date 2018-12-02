@@ -129,7 +129,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        ColourCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No Colour" }));
+        ColourCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No Colour", "1 Colour", "2 Colours" }));
         ColourCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ColourComboActionPerformed(evt);
@@ -144,7 +144,6 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel2.setText("Cardboard Box Ordering System");
 
         ReinforcedCheck.setText("Reinforced bottom");
-        ReinforcedCheck.setEnabled(false);
         ReinforcedCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ReinforcedCheckActionPerformed(evt);
@@ -152,7 +151,6 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         ReinforcedCornerCheck.setText("Reinforced corner");
-        ReinforcedCornerCheck.setEnabled(false);
         ReinforcedCornerCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ReinforcedCornerCheckActionPerformed(evt);
@@ -301,7 +299,6 @@ public class MainJFrame extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel5))
-                                .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -340,46 +337,46 @@ public class MainJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_OrderButtonActionPerformed
 
     private void GradeComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GradeComboActionPerformed
-        String selected = (String)GradeCombo.getSelectedItem();
-        switch(selected){
-            case "Grade 1":
-                ColourCombo.removeAllItems();
-                ColourCombo.addItem("No Colour");
-                ReinforcedCheck.setSelected(false);
-                ReinforcedCheck.setEnabled(false);
-                ReinforcedCornerCheck.setSelected(false);
-                ReinforcedCornerCheck.setEnabled(false);
-                break;
-            case "Grade 2":
-                ColourCombo.removeAllItems();
-                ColourCombo.addItem("No Colour");
-                ColourCombo.addItem("1 Colour");
-                ColourCombo.addItem("2 Colours");
-                ReinforcedCheck.setEnabled(false);
-                ReinforcedCornerCheck.setEnabled(false);
-                break;
-            case "Grade 3":
-                ColourCombo.removeAllItems();
-                ColourCombo.addItem("No Colour");
-                ColourCombo.addItem("1 Colour");
-                ColourCombo.addItem("2 Colours");
-                ReinforcedCheck.setEnabled(false);
-                ReinforcedCornerCheck.setEnabled(false);
-                break;
-            case "Grade 4":
-                ColourCombo.removeAllItems();
-                ColourCombo.addItem("1 Colour");
-                ColourCombo.addItem("2 Colours");
-                ReinforcedCheck.setEnabled(false);
-                ReinforcedCornerCheck.setEnabled(false);
-                break;
-            case "Grade 5":
-                ColourCombo.removeAllItems();
-                ColourCombo.addItem("2 Colours");
-                ReinforcedCheck.setEnabled(true);
-                ReinforcedCornerCheck.setEnabled(false);
-                break;
-        }
+//        String selected = (String)GradeCombo.getSelectedItem();
+//        switch(selected){
+//            case "Grade 1":
+//                ColourCombo.removeAllItems();
+//                ColourCombo.addItem("No Colour");
+//                ReinforcedCheck.setSelected(false);
+//                ReinforcedCheck.setEnabled(false);
+//                ReinforcedCornerCheck.setSelected(false);
+//                ReinforcedCornerCheck.setEnabled(false);
+//                break;
+//            case "Grade 2":
+//                ColourCombo.removeAllItems();
+//                ColourCombo.addItem("No Colour");
+//                ColourCombo.addItem("1 Colour");
+//                ColourCombo.addItem("2 Colours");
+//                ReinforcedCheck.setEnabled(false);
+//                ReinforcedCornerCheck.setEnabled(false);
+//                break;
+//            case "Grade 3":
+//                ColourCombo.removeAllItems();
+//                ColourCombo.addItem("No Colour");
+//                ColourCombo.addItem("1 Colour");
+//                ColourCombo.addItem("2 Colours");
+//                ReinforcedCheck.setEnabled(false);
+//                ReinforcedCornerCheck.setEnabled(false);
+//                break;
+//            case "Grade 4":
+//                ColourCombo.removeAllItems();
+//                ColourCombo.addItem("1 Colour");
+//                ColourCombo.addItem("2 Colours");
+//                ReinforcedCheck.setEnabled(false);
+//                ReinforcedCornerCheck.setEnabled(false);
+//                break;
+//            case "Grade 5":
+//                ColourCombo.removeAllItems();
+//                ColourCombo.addItem("2 Colours");
+//                ReinforcedCheck.setEnabled(true);
+//                ReinforcedCornerCheck.setEnabled(false);
+//                break;
+//        }
     }//GEN-LAST:event_GradeComboActionPerformed
 
     private void SealableCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SealableCheckActionPerformed
@@ -396,32 +393,11 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void ColourComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColourComboActionPerformed
         // TODO add your handling code here:
-        String selectedGrade = (String)GradeCombo.getSelectedItem();
-        String selectedColour = (String)ColourCombo.getSelectedItem();
-        ReinforcedCornerCheck.setEnabled(true);
-        ReinforcedCheck.setEnabled(true);
-        if("No Colour".equals(selectedColour) || "1 Colour".equals(selectedColour)){
-            ReinforcedCornerCheck.setEnabled(false);
-            ReinforcedCornerCheck.setSelected(false);
-            ReinforcedCheck.setEnabled(false);
-            ReinforcedCheck.setSelected(false);
-        } else if("2 Colours".equals(selectedColour)){
-            ReinforcedCornerCheck.setEnabled(false);
-            ReinforcedCornerCheck.setSelected(false);
-            ReinforcedCheck.setEnabled(true);
-            ReinforcedCheck.setSelected(false);
-        }
         
     }//GEN-LAST:event_ColourComboActionPerformed
 
     private void ReinforcedCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReinforcedCheckActionPerformed
         // TODO add your handling code here:
-        if(ReinforcedCheck.isSelected() && !"Grade 2".equals((String)GradeCombo.getSelectedItem())){
-            ReinforcedCornerCheck.setEnabled(true);
-        } else {
-            ReinforcedCornerCheck.setSelected(false);
-            ReinforcedCornerCheck.setEnabled(false);
-        }
     }//GEN-LAST:event_ReinforcedCheckActionPerformed
 
     private void ReinforcedCornerCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReinforcedCornerCheckActionPerformed
