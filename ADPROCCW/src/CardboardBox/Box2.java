@@ -4,7 +4,9 @@
  */
 
 package CardboardBox;
-
+/**
+ * Box 2 requirements.
+ */
 public class Box2 extends Box {
     /// @param Length This is the length of each side of the box
     /// @param Width This is the width of each side of the box
@@ -22,6 +24,9 @@ public class Box2 extends Box {
             super.boxReinforcedCorners = false;
             super.basePrice = 0.65;
     }
+    /**
+    *return information on Box 2.
+    */
     @Override
     /// @return Returns the info of each box
     public String getInfo(){

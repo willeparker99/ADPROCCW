@@ -3,6 +3,9 @@
  *  <p>This is a box of type 4, the type of box based on Swing inputs will be determined by an outside class.</p>
  */
 package CardboardBox;
+/**
+ * Box 4 requirements.
+ */
 
 public class Box4 extends Box {
     /// @param Length This is the length of each side of the box
@@ -21,6 +24,9 @@ public class Box4 extends Box {
             super.boxReinforcedCorners = false;
             super.basePrice = 0.98;
     }
+    /**
+    *Returns information on Box 4.
+    */
     @Override
     /// @return Returns the info of each box
     public String getInfo(){
