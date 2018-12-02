@@ -15,6 +15,9 @@ public class Box2 extends Box {
             super.boxReinforcedCorners = false;
             super.basePrice = 0.65;
     }
+    /**
+    *return information on Box 2.
+    */
     @Override
     public String getInfo(){
         return "Type 2 Box - Area: " + super.getBoxArea() + ", Cardboard Grade: " + boxGrade + ", Colours: " + boxColours + ", Sealable Top: " + boxSealableTop + ", Reinforced Bottom: " + boxReinforcedBottom + ", Reinforced Corners: " + boxReinforcedCorners + ". Total Price: £" + getPrice();
