@@ -13,7 +13,7 @@ public abstract class Box {
     }
     
     public double getPrice(){
-        double pricebasic = basePrice * getBoxArea();
+        double pricebasic = basePrice * ((boxLength * boxWidth * 4) + (boxLength * boxHeight * 2));
         double priceTotal = pricebasic;
         
         if(boxSealableTop){
