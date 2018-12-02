@@ -1,4 +1,7 @@
 package CardboardBox;
+/**
+ * Box 3 requirements.
+ */
 
 public class Box3 extends Box {
     
@@ -13,6 +16,9 @@ public class Box3 extends Box {
             super.boxReinforcedCorners = false;
             super.basePrice = 0.82;
     }
+    /**
+    *return information on Box 3.
+    */
     @Override
     public String getInfo(){
         return "Type 3 Box - Area: " + super.getBoxArea() + ", Cardboard Grade: " + boxGrade + ", Colours: " + boxColours + ", Sealable Top: " + boxSealableTop + ", Reinforced Bottom: " + boxReinforcedBottom + ", Reinforced Corners: " + boxReinforcedCorners + ". Total Price: £" + getPrice();
