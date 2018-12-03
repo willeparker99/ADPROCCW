@@ -472,28 +472,122 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void CalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalculateActionPerformed
         WarningText.setText("");
+        WarningText.setForeground(Color.red);
         String grade = (String) GradeCombo.getSelectedItem();
         String colour = (String) ColourCombo.getSelectedItem();
         Boolean bottom = ReinforcedCheck.isSelected();
         Boolean corner = ReinforcedCornerCheck.isSelected();
-
-        if (grade.equals("1") && colour.equals("0") && bottom.equals(false) && corner.equals(false)){
-                        
-        } else if ((grade.equals("2") && (colour.equals("1") || colour.equals("2") || colour.equals("3")) && bottom.equals(false) && corner.equals(false)) || (grade.equals("2") && colour.equals("2") && bottom.equals(true) && corner.equals(false))) {            
-            
-        } else if (grade.equals("3") && (colour.equals("1") || colour.equals("2") || colour.equals("3"))) {
-            
-        } else if (grade.equals("4") && (colour.equals("1") || colour.equals("2"))) {
-            
-        } else if (grade.equals("5") && colour.equals("2")){
-            
-        } else{
-            this.dispose();
-            new ErrorMessage().setVisible(true);
+        
+        switch(grade){
+            case "Grade 1":
+                if(colour.equals("No Colour")){
+                    if(bottom.equals(false) && corner.equals(false)){
+                        addToOrder();
+                    } else {
+                        WarningText.setText("Warning - Grade 1 cardboard cannot have reinforced coreners or a reinforced bottom");
+                    }
+                } else {
+                    WarningText.setText("Warning - Grade 1 cardboard cannot have colour.");
+                }
+                break;
+            case "Grade 2":
+                switch(colour){
+                    case "No Colour":
+                        if(bottom.equals(false) && corner.equals(false)){
+                            addToOrder();
+                        } else {
+                            WarningText.setText("Warning - Grade 2 cardboard with no colour cannot have reinforcements");
+                        }
+                        break;
+                    case "1 Colour":
+                        if(bottom.equals(false) && corner.equals(false)){
+                            addToOrder();
+                        } else {
+                            WarningText.setText("Warning - Grade 2 cardboard with 1 colour cannot have reinforcements");
+                        }
+                        break;
+                    case "2 Colours":
+                        if(bottom.equals(true) && corner.equals(false)){
+                            addToOrder();
+                        } else {
+                            WarningText.setText("Warning - Grade 2 cardboard with 2 colours must have a reinforced bottom");
+                        }
+                        break;
+                }
+                break;
+            case "Grade 3":
+                switch(colour){
+                    case "No Colour":
+                        if(bottom.equals(false) && corner.equals(false)){
+                            addToOrder();
+                        } else {
+                            WarningText.setText("Warning - Grade 3 cardboard with no colour cannot have reinforcements");
+                        }
+                        break;
+                    case "1 Colour":
+                        if(bottom.equals(false) && corner.equals(false)){
+                            addToOrder();
+                        } else {
+                            WarningText.setText("Warning - Grade 3 cardboard with 1 colour cannot have reinforcements");
+                        }
+                        break;
+                    case "2 Colours":
+                        if(bottom.equals(false) && corner.equals(true)){
+                            WarningText.setText("Warning - Must have a reinforced bottom to have reinforced corners");
+                        } else {
+                            addToOrder();
+                        }
+                        break;
+                }
+                break;
+            case "Grade 4":
+                switch(colour){
+                    case "No Colour":
+                        WarningText.setText("Warning - Grade 4 cardboard must have at least 1 colour");
+                        break;
+                    case "1 Colour":
+                        if(bottom.equals(false) && corner.equals(false)){
+                            addToOrder();
+                        } else {
+                            WarningText.setText("Warning - Grade 4 cardboard with 1 colour cannot have reinforcements");
+                        }
+                        break;
+                    case "2 Colours":
+                        if(bottom.equals(false) && corner.equals(true)){
+                            WarningText.setText("Warning - Must have a reinforced bottom to have reinforced corners");
+                        } else {
+                            addToOrder();
+                        }
+                        break;
+                }
+                break;
+            case "Grade 5":
+                switch(colour){
+                    case "No Colour":
+                        WarningText.setText("Warning - Grade 5 cardboard must have at least 2 colours");
+                        break;
+                    case "1 Colour":
+                        if(bottom.equals(false) && corner.equals(false)){
+                            addToOrder();
+                        } else {
+                            WarningText.setText("Warning - Grade 5 cardboard with 1 colour cannot have reinforcements");
+                        }
+                        break;
+                    case "2 Colours":
+                        if(bottom.equals(false) && corner.equals(true)){
+                            WarningText.setText("Warning - Must have a reinforced bottom to have reinforced corners");
+                        } else {
+                            addToOrder();
+                        }
+                        break;
+                }
+                break;
         }
         
-
         
+        
+    }//GEN-LAST:event_CalculateActionPerformed
+    private void addToOrder(){
         if (WidthText.getText().matches("[0-9]+") && LengthText.getText().matches("[0-9]+") && HeightText.getText().matches("[0-9]+")) {
             double area = Double.parseDouble(LengthText.getText()) * Double.parseDouble(WidthText.getText()) * Double.parseDouble(HeightText.getText());
             Calculations calc = new Calculations(Double.parseDouble(LengthText.getText()), Double.parseDouble(WidthText.getText()), Double.parseDouble(HeightText.getText()), SealableCheck.isSelected(), ReinforcedCheck.isSelected(), ReinforcedCornerCheck.isSelected(), (String) GradeCombo.getSelectedItem(), (String) ColourCombo.getSelectedItem(), (int) QuantitySpinner.getValue());
@@ -517,10 +611,7 @@ public class MainJFrame extends javax.swing.JFrame {
         ReinforcedCornerCheck.setSelected(false);
         SealableCheck.setSelected(false);
         QuantitySpinner.setValue(1);
-
-
-    }//GEN-LAST:event_CalculateActionPerformed
-
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         LengthText.setText("Length");
         WidthText.setText("Width");
