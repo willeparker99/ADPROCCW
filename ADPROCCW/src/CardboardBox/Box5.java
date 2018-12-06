@@ -29,7 +29,10 @@ public class Box5 extends Box {
     @Override
     /// @return Returns the info of each box
     public String getInfo(){
-        return "Type 5 Box - Area: " + super.getBoxArea() + ", Cardboard Grade: " + boxGrade + ", Colours: " + boxColours + ", Sealable Top: " + boxSealableTop + ", Reinforced Bottom: " + boxReinforcedBottom + ", Reinforced Corners: " + boxReinforcedCorners + ". Total Price: £" + getPrice();
+        return "Type 5 Box - Area: " + super.getBoxArea() + ", Cardboard Grade: 
+            " + boxGrade + ", Colours: " + boxColours + ", Sealable Top: " + boxSealableTop + ",
+        Reinforced Bottom: " + boxReinforcedBottom + ", Reinforced Corners: " + boxReinforcedCorners + ". 
+            Total Price: £" + getPrice();
     }
     
             
