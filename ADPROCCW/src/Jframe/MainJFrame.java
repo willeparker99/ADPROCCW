@@ -608,9 +608,19 @@ public class MainJFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_CalculateActionPerformed
     private void addToOrder(){
-        if (WidthText.getText().matches("[0-9]+") && LengthText.getText().matches("[0-9]+") && HeightText.getText().matches("[0-9]+")) {
-            double area = Double.parseDouble(LengthText.getText()) * Double.parseDouble(WidthText.getText()) * Double.parseDouble(HeightText.getText());
-            Calculations calc = new Calculations(Double.parseDouble(LengthText.getText()), Double.parseDouble(WidthText.getText()), Double.parseDouble(HeightText.getText()), SealableCheck.isSelected(), ReinforcedCheck.isSelected(), ReinforcedCornerCheck.isSelected(), (String) GradeCombo.getSelectedItem(), (String) ColourCombo.getSelectedItem(), (int) QuantitySpinner.getValue());
+        if (WidthText.getText().matches("[0-9]+") && LengthText.getText().matches("[0-9]+")
+            && HeightText.getText().matches("[0-9]+")) {
+            double area = Double.parseDouble(LengthText.getText()) * Double.parseDouble(WidthText.getText())
+                * Double.parseDouble(HeightText.getText());
+            
+            Calculations calc = new Calculations(Double.parseDouble(LengthText.getText()),
+                                                 Double.parseDouble(WidthText.getText()), 
+                                                 Double.parseDouble(HeightText.getText()), 
+                                                 SealableCheck.isSelected(), ReinforcedCheck.isSelected(), 
+                                                 ReinforcedCornerCheck.isSelected(), 
+                                                 (String) GradeCombo.getSelectedItem(), 
+                                                 (String) ColourCombo.getSelectedItem(), 
+                                                 (int) QuantitySpinner.getValue());
             String ReceiptText = "";
             for (int i = 0; i < calc.getBoxLi().size(); i++) {
                 ReceiptText += calc.getBoxByIndex(i).getInfo() + "\n";
