@@ -28,7 +28,10 @@ public class Box2 extends Box {
     @Override
     /// @return Returns the info of each box
     public String getInfo(){
-        return "Type 2 Box - Area: " + super.getBoxArea() + ", Cardboard Grade: " + boxGrade + ", Colours: " + boxColours + ", Sealable Top: " + boxSealableTop + ", Reinforced Bottom: " + boxReinforcedBottom + ", Reinforced Corners: " + boxReinforcedCorners + ". Total Price: £" + getPrice();
+        return "Type 2 Box - Area: " + super.getBoxArea() + ", Cardboard Grade: " + boxGrade + 
+            ", Colours: " + boxColours + ", Sealable Top: " + boxSealableTop + ", Reinforced Bottom: " 
+            + boxReinforcedBottom + ", Reinforced Corners: " + boxReinforcedCorners 
+            + ". Total Price: £" + getPrice();
     }
     
             
