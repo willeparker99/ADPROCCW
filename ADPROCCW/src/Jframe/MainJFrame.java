@@ -117,8 +117,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        GradeCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] 
-                         { "Grade 1", "Grade 2", "Grade 3", "Grade 4", "Grade 5" }));
+        GradeCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Grade 1", "Grade 2", "Grade 3", "Grade 4", "Grade 5" }));
         GradeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GradeComboActionPerformed(evt);
@@ -130,8 +129,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        ColourCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] 
-                          { "No Colour", "1 Colour", "2 Colours" }));
+        ColourCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No Colour", "1 Colour", "2 Colours" }));
         ColourCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ColourComboActionPerformed(evt);
@@ -608,19 +606,9 @@ public class MainJFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_CalculateActionPerformed
     private void addToOrder(){
-        if (WidthText.getText().matches("[0-9]+") && LengthText.getText().matches("[0-9]+")
-            && HeightText.getText().matches("[0-9]+")) {
-            double area = Double.parseDouble(LengthText.getText()) * Double.parseDouble(WidthText.getText())
-                * Double.parseDouble(HeightText.getText());
+        if (WidthText.getText().matches("[0-9]+") && LengthText.getText().matches("[0-9]+") && HeightText.getText().matches("[0-9]+")) {double area = Double.parseDouble(LengthText.getText()) * Double.parseDouble(WidthText.getText())* Double.parseDouble(HeightText.getText());
             
-            Calculations calc = new Calculations(Double.parseDouble(LengthText.getText()),
-                                                 Double.parseDouble(WidthText.getText()), 
-                                                 Double.parseDouble(HeightText.getText()), 
-                                                 SealableCheck.isSelected(), ReinforcedCheck.isSelected(), 
-                                                 ReinforcedCornerCheck.isSelected(), 
-                                                 (String) GradeCombo.getSelectedItem(), 
-                                                 (String) ColourCombo.getSelectedItem(), 
-                                                 (int) QuantitySpinner.getValue());
+            Calculations calc = new Calculations(Double.parseDouble(LengthText.getText()), Double.parseDouble(WidthText.getText()), Double.parseDouble(HeightText.getText()), SealableCheck.isSelected(), ReinforcedCheck.isSelected(), ReinforcedCornerCheck.isSelected(), (String) GradeCombo.getSelectedItem(), (String) ColourCombo.getSelectedItem(), (int) QuantitySpinner.getValue());
             String ReceiptText = "";
             for (int i = 0; i < calc.getBoxLi().size(); i++) {
                 ReceiptText += calc.getBoxByIndex(i).getInfo() + "\n";
