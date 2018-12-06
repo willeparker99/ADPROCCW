@@ -21,7 +21,11 @@ public final class Calculations {
     protected int type, noInOrder;
     protected static ArrayList<Box> boxesCreated = new ArrayList<>();
     
-    public Calculations(double Length, double Width, double Height, boolean sealableTop, boolean reinforcedBottom, boolean reinforcedCorners, String cardboardGrade, String colourPrint, int noInOrder){
+    public Calculations(double Length, double Width, double Height, 
+                        boolean sealableTop, boolean reinforcedBottom, 
+                        boolean reinforcedCorners, String cardboardGrade, 
+                        String colourPrint, int noInOrder){
+        
         this.Length = Length;
         this.Width = Width;
         this.Height = Height;
