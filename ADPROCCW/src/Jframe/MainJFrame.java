@@ -117,7 +117,8 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        GradeCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Grade 1", "Grade 2", "Grade 3", "Grade 4", "Grade 5" }));
+        GradeCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] 
+                         { "Grade 1", "Grade 2", "Grade 3", "Grade 4", "Grade 5" }));
         GradeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GradeComboActionPerformed(evt);
@@ -129,7 +130,8 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        ColourCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No Colour", "1 Colour", "2 Colours" }));
+        ColourCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] 
+                          { "No Colour", "1 Colour", "2 Colours" }));
         ColourCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ColourComboActionPerformed(evt);
@@ -212,8 +214,10 @@ public class MainJFrame extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(ExitButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(OrderButton, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 
+                                                 javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(OrderButton, javax.swing.GroupLayout.PREFERRED_SIZE, 92, 
+                                                javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -226,25 +230,32 @@ public class MainJFrame extends javax.swing.JFrame {
                                         .addGap(119, 119, 119)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(LengthText, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(LengthText, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                              133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
-                                                .addComponent(WidthText, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(WidthText, javax.swing.GroupLayout.PREFERRED_SIZE, 
+                                                              133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
-                                                .addComponent(HeightText, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(HeightText, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                              133, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addGroup(layout.createSequentialGroup()
                                                         .addGap(10, 10, 10)
-                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.
+                                                                                             Alignment.LEADING)
                                                             .addComponent(SealableCheck)
                                                             .addComponent(ReinforcedCheck)
-                                                            .addComponent(GradeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addComponent(GradeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 133, 
+                                                                          javax.swing.GroupLayout.PREFERRED_SIZE)
                                                             .addComponent(jLabel4)))
                                                     .addComponent(jButton1))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.
+                                                                 DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                        .addComponent(ColourCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(ColourCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.
+                                                                      GroupLayout.PREFERRED_SIZE)
                                                         .addGap(26, 26, 26))
                                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -254,10 +265,12 @@ public class MainJFrame extends javax.swing.JFrame {
                                                                     .addComponent(jLabel1)
                                                                     .addGroup(layout.createSequentialGroup()
                                                                         .addGap(6, 6, 6)
-                                                                        .addComponent(QuantitySpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                        .addComponent(QuantitySpinner, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                      81, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                                 .addGap(7, 7, 7)))
                                                         .addGap(51, 51, 51))))
-                                            .addComponent(WarningText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addComponent(WarningText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.
+                                                          PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
@@ -265,7 +278,8 @@ public class MainJFrame extends javax.swing.JFrame {
                                         .addGap(66, 66, 66)
                                         .addComponent(jLabel6)
                                         .addGap(38, 38, 38)
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, 
+                                                      javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jScrollPane1))
                                 .addGap(16, 16, 16))))
                     .addGroup(layout.createSequentialGroup()
@@ -292,9 +306,12 @@ public class MainJFrame extends javax.swing.JFrame {
                                 .addComponent(jLabel3)
                                 .addGap(25, 25, 25)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(LengthText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(WidthText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(HeightText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(LengthText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, 
+                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(WidthText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, 
+                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(HeightText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, 
+                                                  javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel4)
@@ -302,8 +319,10 @@ public class MainJFrame extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(GradeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(ColourCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(GradeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                          javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ColourCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                          javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(18, 18, 18)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                             .addComponent(ReinforcedCheck)
@@ -314,7 +333,8 @@ public class MainJFrame extends javax.swing.JFrame {
                                         .addGap(68, 68, 68)
                                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(QuantitySpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(QuantitySpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, 
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(16, 16, 16)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
